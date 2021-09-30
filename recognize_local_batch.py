@@ -46,10 +46,14 @@ def main():
         sample_conf = json.load(f)
 
     # 配置相关参数
-    test_path = "sample/my/1632901973699.jpg"  # 测试识别的图片路径
-    save_path = sample_conf["local_image_dir"]  # 保存的地址
-    image_suffix = sample_conf["image_suffix"]  # 文件后缀
-    recognize_captcha(test_path, save_path, image_suffix)
+    root_path = "./sample/my"
+    dir_or_files = os.listdir(root_path)
+    for dir_file in dir_or_files:
+        dir_file_path = os.path.join(root_path, dir_file)
+        test_path = dir_file_path  # 测试识别的图片路径
+        save_path = sample_conf["local_image_dir"]  # 保存的地址
+        image_suffix = sample_conf["image_suffix"]  # 文件后缀
+        recognize_captcha(test_path, save_path, image_suffix)
 
 
 if __name__ == '__main__':

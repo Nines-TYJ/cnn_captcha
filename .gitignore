@@ -108,6 +108,7 @@ venv.bak/
 
 # 数据文件
 sample/
+model1/
 model/
 labels.json
 test.csv
